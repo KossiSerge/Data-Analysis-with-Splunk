@@ -40,17 +40,68 @@ Note: Dataset was randomly generated and created for your virtual experience.
 
 #### Fraudulent Transactions Percentage by Month
 
+
+```spl
+index=main sourcetype="fraud-data.csv"
+| eval month=case(step==0, "May", step==1, "June", step==2, "July", step==3, "August")
+| stats count as totalEvents count(eval(fraud="1")) as totalFraudulentTransac by step, month
+| sort step, month
+| fields - step
+| eval fraudPerc=round((totalFraudulentTransac/totalEvents)*100,2)
+```
+
 #### Fraudulent Transactions by Month
+
+```spl
+index=main sourcetype="fraud-data.csv" fraud="1"
+| eval month=case(step==0, "May", step==1, "June", step==2, "July", step==3, "August")
+| stats count by step, month
+| sort step
+| fields - step
+```
 
 #### Age group with the most fraudulent activity by Merchant
 
+```spl
+index=main sourcetype="fraud-data.csv" fraud="1" age=1
+| stats count by merchant
+```
+
 #### Bank_Report_FraudCountbyMerchant
+
+```spl
+index=main sourcetype="fraud-data.csv" fraud="1"
+| stats count by merchant
+| sort -count
+```
 
 #### Bank_Report_FraudTrendByCategory
 
+```spl
+index=main sourcetype="fraud-data.csv" fraud="1"
+| eval month=case(step=0, "May", step=1, "June", step=2, "July", step=3, "August")
+| chart count over month by category
+```
+
 #### Bank_Report_CountbyCategory
 
-#### Fraudulent Transactions by Age
+```spl
+index=main sourcetype="fraud-data.csv" fraud="1"
+| stats count by category
+```
 
-#### Bank_Report_FraudCountbyAgeGroup
+#### Fraudulent Transactions by Age Group
 
+```spl
+index=main sourcetype="fraud-data.csv" fraud="1"
+| eval age_group=case(
+    age==0.0, "<=18",
+    age==1.0, "19-25",
+    age==2.0, "26-35",
+    age==3.0, "36-45",
+    age==4.0, "46-55",
+    age==5.0, "56-65"
+) 
+| stats count by age_group
+| sort -count
+```
