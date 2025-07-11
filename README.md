@@ -2,6 +2,9 @@
 
 ### Dataset
 The dataset used is available [here](./data/fraud_data.csv)
+![image alt](https://github.com/KossiSerge/Data-Analysis-with-Splunk/blob/main/data/Datasetoverview.png?raw=true)
+
+
 ### About the dataset
 The Dataset used is an enriched data of the a dataset randomly generated  by the Fraud team of Commonwealth Bank for the Forage cybersecurity role simulation. This dataset consists of payments from various customers made in different periods and amounts. The feature columns include:  
 Step: The steps represent four months.  
