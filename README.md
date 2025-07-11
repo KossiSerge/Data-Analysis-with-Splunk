@@ -1,6 +1,7 @@
 # Splunk-for-Bank-Data-Visualization
 
-
+### Dataset
+The dataset used is available [here](./data/fraud_data.csv)
 ### About the dataset
 The Dataset used is an enriched data of the a dataset randomly generated  by the Fraud team of Commonwealth Bank for the Forage cybersecurity role simulation. This dataset consists of payments from various customers made in different periods and amounts. The feature columns include:  
 Step: The steps represent four months.  
@@ -30,9 +31,9 @@ Note: Dataset was randomly generated and created for your virtual experience.
 
 ### Dashboard
 
-![image alt](https://github.com/KossiSerge/Splunk-for-Bank-Data-Visualization/blob/main/Dsh1.png?raw=true)
-![image alt](https://github.com/KossiSerge/Splunk-for-Bank-Data-Visualization/blob/main/Dsh2.png?raw=true)
-![image alt](https://github.com/KossiSerge/Splunk-for-Bank-Data-Visualization/blob/main/Dsh3.png?raw=true)
+![image alt](https://github.com/KossiSerge/Splunk-for-Bank-Data-Visualization/blob/main/data/Dsh1.png?raw=true)
+![image alt](https://github.com/KossiSerge/Splunk-for-Bank-Data-Visualization/blob/main/data/Dsh2.png?raw=true)
+![image alt](https://github.com/KossiSerge/Splunk-for-Bank-Data-Visualization/blob/main/data/Dsh3.png?raw=true)
 
 
 ### SPL Queries
