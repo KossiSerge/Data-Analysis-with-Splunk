@@ -1,4 +1,4 @@
-# Splunk-for-Bank-Data-Visualization
+# Data Analysis with Splunk
 
 ### Dataset
 The dataset used is available [here](./data/fraud_data.csv)
